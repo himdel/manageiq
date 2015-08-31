@@ -358,8 +358,8 @@ class TreeBuilder
   end
 
   # Handle custom tree nodes (object is a Hash)
-  def x_get_tree_custom_kids(object, options)
-    options[:count_only] ? 0 : []
+  def x_get_tree_custom_kids(_object, options)
+    raise("#{self.class}#x_get_tree_custom_kids called with unknown type #{options[:type]}")
   end
 
   def count_only_or_objects(count_only, objects, sort_by = nil)

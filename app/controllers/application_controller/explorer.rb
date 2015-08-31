@@ -282,7 +282,9 @@ module ApplicationController::Explorer
                         when VmdbTableEvm        then x_get_tree_vmdb_table_kids(object, options)
                         when Zone                then x_get_tree_zone_kids(object, options)
                         when Hash                then x_get_tree_custom_kids(object, options)
+                        else raise("old x_get_tree_object called with object of class #{object.class}")
                         end
+
     children_or_count || (options[:count_only] ? 0 : [])
   end
 

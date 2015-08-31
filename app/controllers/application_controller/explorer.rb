@@ -832,7 +832,7 @@ module ApplicationController::Explorer
       objects = MiqWidget.find_all_by_content_type(WIDGET_CONTENT_TYPE[object[:id].split('-').last])
       return options[:count_only] ? objects.count : objects.sort_by(&:title)
     else
-      return options[:count_only] ? 0 : []
+      raise("old x_get_tree_custom_kids called with unknown type #{options[:type].inspect}")
     end
   end
 

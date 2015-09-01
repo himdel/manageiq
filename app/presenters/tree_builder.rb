@@ -431,6 +431,13 @@ class TreeBuilder
   end
   private_class_method :rbac_has_visible_vm_descendants?
 
+  def self.empty_kids(prefix)
+    define_method("x_get_tree_#{prefix}_kids", lambda { |_parent, options|
+      count_only_or_objects(options[:count_only], [])
+    })
+  end
+  private_class_method :empty_kids
+
   # Tree node prefixes for generic explorers
   X_TREE_NODE_PREFIXES = {
     "a"   => "MiqAction",

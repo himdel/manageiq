@@ -47,13 +47,6 @@ class TreeBuilderPolicyProfile < TreeBuilder
     success + failure
   end
 
-  # level 4 - nothing under conditions
-  def x_get_tree_co_kids(_parent, options)
-    count_only_or_objects(options[:count_only], [])
-  end
-
-  # level 5 - nothing under actions
-  def x_get_tree_ac_kids(_parent, options)
-    count_only_or_objects(options[:count_only], [])
-  end
+  empty_kids :co  # level 4 - nothing under conditions
+  empty_kids :ac  # level 5 - nothing under actions
 end

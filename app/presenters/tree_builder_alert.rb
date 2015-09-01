@@ -22,8 +22,5 @@ class TreeBuilderAlert < TreeBuilder
     count_only_or_objects(options[:count_only], MiqAlert.all, :description)
   end
 
-  # level 2 - nothing
-  def x_get_tree_al_kids(_parent, options)
-    count_only_or_objects(options[:count_only], [])
-  end
+  empty_kids :al  # level 2 - nothing
 end

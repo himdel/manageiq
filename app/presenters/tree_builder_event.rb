@@ -22,8 +22,5 @@ class TreeBuilderEvent < TreeBuilder
     count_only_or_objects(options[:count_only], MiqPolicy.all_policy_events, :description)
   end
 
-  # level 2 - nothing
-  def x_get_tree_ev_kids(_parent, options)
-    count_only_or_objects(options[:count_only], [])
-  end
+  empty_kids :ev  # level 2 - nothing
 end

@@ -22,8 +22,5 @@ class TreeBuilderAction < TreeBuilder
     count_only_or_objects(options[:count_only], MiqAction.all, :description)
   end
 
-  # level 2 - nothing
-  def x_get_tree_ac_kids(_parent, options)
-    count_only_or_objects(options[:count_only], [])
-  end
+  empty_kids :ac  # level 2 - nothing
 end

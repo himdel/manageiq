@@ -2,6 +2,13 @@ class ApiController < ApplicationController
   skip_before_action :get_global_session_data
   skip_after_action :set_global_session_data
 
+  before_action :really_no_session
+
+  # prevent session from being saved
+  def really_no_session
+    env['rack.session.options'][:skip] = true
+  end
+
   class AuthenticationError < StandardError; end
   class Forbidden < StandardError; end
   class BadRequestError < StandardError; end

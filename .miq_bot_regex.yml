@@ -1,0 +1,7 @@
+---
+- :regex: !ruby/regexp /textInput-markup/
+  :message: Please don't copy element ids without !
+  :severity: error
+- :regex: !ruby/regexp /\.factory\(/
+  :message: Please consider using a service instead of a factory.
+  :severity: warning

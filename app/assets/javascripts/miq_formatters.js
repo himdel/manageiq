@@ -22,7 +22,6 @@
 
   function number_with_delimiter(val, options) {
     options = _.extend({ delimiter: ',', separator: '.' }, options || {});
-
     var intpart, floatpart, minus;
     if (_.isNumber(val)) {
       intpart = ~~ val;
@@ -81,7 +80,7 @@
       fmt = "0";
     } else {
       var p = options.precision - 1;
-      while (p > 0) {
+      while (p-- > 0) {
         fmt += '0';
       }
     }

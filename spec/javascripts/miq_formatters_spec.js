@@ -166,6 +166,19 @@ describe('ManageIQ.charts.formatters', function() {
     });
   });
 
+  describe('.mbytes_to_human_size', function() {
+    it('Suffixed Megabytes (MB, GB)', function() {
+      var options = {
+        description: 'Suffixed Megabytes (MB, GB)',
+        name: 'mbytes_to_human_size',
+        precision: 2,
+      };
+      var fn = ManageIQ.charts.formatters[options.name];
+
+      expect(fn(2, options)).toEqual('2.00 MB');
+    });
+  });
+
   describe('.gbytes_to_human_size', function() {
     it('Suffixed Gigabytes (GB)', function() {
       var options = {

@@ -9,7 +9,7 @@ if defined?(SecureHeaders)
       :default_src => ["'self'"],
       :frame_src   => ["'self'"],
       :connect_src => ["'self'"],
-      :style_src   => ["'unsafe-inline'", "'self'"],
+      :style_src   => ["'unsafe-inline'", "'self'", "blob:"],
       :script_src  => ["'unsafe-eval'", "'unsafe-inline'", "'self'"],
       :report_uri  => ["/dashboard/csp_report"]
     }
